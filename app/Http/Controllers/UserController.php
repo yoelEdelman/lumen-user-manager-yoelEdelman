@@ -59,7 +59,7 @@ class UserController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'password' => 'required',
-            'email' => 'required'
+            'email' => 'required|email|unique:users' . $id
         ]);
 
         User::where('id', $id)->update([
